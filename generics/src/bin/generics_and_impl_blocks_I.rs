@@ -16,12 +16,24 @@ impl TreasureChest<[&str; 3]> {
     }
 }
 
+impl TreasureChest<i32> {
+    fn calculate_amount(&mut self) {
+        self.treasure *=  self.treasure;
+    }
+}
+
+impl<T> TreasureChest<T> {
+    fn capital_captain(&self) -> String {
+        self.captain.to_uppercase()
+    }
+}
+
 fn main() {
     let gold_chest = TreasureChest {
         captain: String::from("Firebeard"),
         treasure: "Gold",
     };
-    println!("{:?}", gold_chest);
+    println!("{}", gold_chest.capital_captain());
 
     let mut silver_chest = TreasureChest {
         captain: String::from("Bloodsail"),
@@ -36,4 +48,11 @@ fn main() {
     };
     println!("{:?}", special_chest.amount_of_treasure());
     println!("{:?}", special_chest);
+
+    let mut treasure_amount = TreasureChest {
+        captain: String::from("BountyHunter"),
+        treasure: 7
+    };
+    println!("{:?}", treasure_amount.calculate_amount());
+    println!("{:?}", treasure_amount);
 }

@@ -1,3 +1,4 @@
+#[derive(Debug)]
 enum Cheesesteak<T> {
     Plain,
     Topping(T),
@@ -9,8 +10,10 @@ fn main() {
     let topping = "bacon".to_string();
     let bacon = Cheesesteak::Topping(&topping);
 
-    let mut plain: Cheesesteak<String> = Cheesesteak::Plain;
-
+    let plain: Cheesesteak<String> = Cheesesteak::Plain;
+    println!("{mushroom:?}");
+    println!("{onions:?}");
+    println!("{topping}")
     // Invalid, &str is not a String, which is what T must be for plain variable
     // plain = Cheesesteak::Topping("sausage");
 }

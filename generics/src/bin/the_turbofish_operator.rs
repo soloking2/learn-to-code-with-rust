@@ -9,6 +9,7 @@ fn main() {
     println!("{}", identity::<&str>("hello"));
     println!("{}", identity::<String>(String::from("hello")));
     println!("{}", identity::<bool>(true));
+    println!("{}", identity::<i64>(456));
     println!("{:?}", identity::<DeliSandwich>(DeliSandwich {}));
 }
 
