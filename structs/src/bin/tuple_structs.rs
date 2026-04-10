@@ -3,13 +3,18 @@ struct ShortDuration(i32, i32);
 // Years, months
 struct LongDuration(i32, i32);
 
+struct Name(String, String);
+
 fn main() {
     let work_shift = ShortDuration(8, 30);
     println!("{} hours {} minutes", work_shift.0, work_shift.1);
+    let name = Name(String::from("David"), String::from("Johnson"));
+
+    println!("Full name is {} {}\n", name.0, name.1);
 
     let era = LongDuration(5, 3);
     println!("{} years {} months", era.0, era.1);
-
+ 
     // go_to_work(era);
     // accept_tuple(era);
 

@@ -6,9 +6,7 @@ enum Milk {
 }
 
 fn main() {
-    let my_beverage = Milk::NonDairy {
-        kind: String::from("Oat"),
-    };
+    let my_beverage = Milk::Lowfat(2025);
 
     let Milk::NonDairy { kind } = my_beverage else {
         println!("You do not have the nondairy milk");

@@ -10,13 +10,14 @@ impl OnlineOrderStatus {
     fn check(&self) {
         match self {
             OnlineOrderStatus::Delivered => {
-                println!("Your item has arrived")
+                println!("Your item has been delivered");
             }
             other_status => {
-                println!("Your item is {other_status:?}")
+                println!("Your item is {other_status:?}");
             }
         }
     }
+    
 }
 
 fn main() {

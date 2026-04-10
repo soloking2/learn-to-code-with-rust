@@ -5,5 +5,6 @@ fn main() {
     name.push_str(" Pask");
     println!("{name}");
 
-    name.push_str("haver");
+    name.push_str(" haver");
+    println!("{name}")
 }

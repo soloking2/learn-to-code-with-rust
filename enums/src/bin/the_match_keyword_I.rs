@@ -1,20 +1,24 @@
 #[derive(Debug)]
 enum OperatingSystem {
     Windows,
-    MacOS,
+    MacOs,
     Linux,
 }
-
 fn main() {
-    let my_computer = OperatingSystem::MacOS;
-    let age = years_since_release(my_computer);
-    println!("My computer's operating system is {age} years old");
+    let windows = years_since_release(OperatingSystem::Windows);
+    let macos = years_since_release(OperatingSystem::MacOs);
+    let linux = years_since_release(OperatingSystem::Linux);
+    println!("My computer's operating system is {}\n", windows);
+    println!("My computer's operating system is {}\n", macos);
+    println!("My computer's operating system is {}\n", linux);
 }
 
 fn years_since_release(os: OperatingSystem) -> u32 {
     match os {
-        OperatingSystem::Windows => 39,
-        OperatingSystem::MacOS => 20,
-        OperatingSystem::Linux => 25,
+        OperatingSystem::Windows => 41,
+        OperatingSystem::MacOs => 25,
+        OperatingSystem::Linux => 36
     }
 }
+
+
