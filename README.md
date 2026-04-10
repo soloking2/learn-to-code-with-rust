@@ -10,7 +10,7 @@ To download the content, you can either clone this repository with Git or downlo
 
 In Terminal/PowerShell, navigate to the directory where you'd like to download the `learn-to-code-with-rust` course materials. 
 
-Execute `git clone git@github.com:paskhaver/learn-to-code-with-rust.git` to clone the repository to your computer.
+Execute `git clone git@github.com:soloking2/learn-to-code-with-rust.git` to clone the repository to your computer.
 
 ### To download repository:
 
