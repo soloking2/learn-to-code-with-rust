@@ -1,7 +1,10 @@
 fn main() {
-    let pizza_diameters: Vec<i32> = vec![8, 10, 12, 14];
-    println!("{pizza_diameters:?}");
+    let pizza_diameter: Vec<i32> = Vec::new();
+    println!("{pizza_diameter:?}");
 
-    let pastas: Vec<&str> = vec!["Rigatoni", "Angel hair", "Fettucine"];
+    let mut pastas = vec![8,10,12,34];
+    println!("{pastas:?}");
+    
+    pastas.pop();
     println!("{pastas:?}");
 }

@@ -4,10 +4,16 @@ fn main() {
     let sausage = String::from("Sausage");
     let pizza_toppings = vec![pepperoni, mushroom, sausage];
 
-    let option = pizza_toppings.get(50);
+    let option = pizza_toppings.get(2);
 
     match option {
         Some(topping) => println!("The topping is {topping}"),
         None => println!("No value at that index position"),
+    }
+
+    if let Option::Some(topping) = option {
+        println!("The topping is {topping}")
+    } else {
+        println!("No value at that index position using if let")
     }
 }
