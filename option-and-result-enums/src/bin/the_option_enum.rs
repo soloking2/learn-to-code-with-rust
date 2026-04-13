@@ -1,3 +1,4 @@
+
 fn main() {
     let a = Option::Some(5);
     let b = Option::Some("hello");
@@ -7,4 +8,7 @@ fn main() {
     let a = Option::<i16>::Some(5);
 
     let d: Option<bool> = Option::None;
+
+    let op = Option::Some(String::from("Five"));
+    println!("{:?}", op);
 }

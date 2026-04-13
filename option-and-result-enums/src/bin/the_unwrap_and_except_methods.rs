@@ -10,7 +10,7 @@ fn main() {
     let valid_instrument = bass.expect("Unable to retrieve element");
     println!("{valid_instrument}");
 
-    let invalid_instrument = musical_instruments.get(100);
+    let invalid_instrument = musical_instruments.get(1);
     println!("{:?}", invalid_instrument);
     invalid_instrument.expect("Unable to retrieve musical instrument");
 }

@@ -1,20 +1,19 @@
-fn operation(great_success: bool) -> Result<&'static str, &'static str> {
-    if great_success {
+fn main() {
+let result = operation(true);
+
+#[allow(unused_variables)]
+let content = match result {
+    Ok(message) => message,
+    Err(error) => error
+};
+
+println!("{}", result.unwrap())
+}
+
+fn operation(success: bool) -> Result<&'static str, &'static str> {
+    if success {
         Ok("Success")
     } else {
         Err("Error")
     }
-}
-
-fn main() {
-    let my_result = operation(true);
-
-    let content = match my_result {
-        Ok(message) => message,
-        Err(error) => error,
-    };
-
-    println!("{}", my_result.unwrap());
-    println!("{}", my_result.unwrap());
-    println!("{}", my_result.unwrap());
 }

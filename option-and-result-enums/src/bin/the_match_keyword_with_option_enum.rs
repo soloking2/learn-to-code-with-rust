@@ -16,6 +16,6 @@ fn main() {
 fn play(instrument_option: Option<&String>) {
     match instrument_option {
         Option::Some(instrument) => println!("Playing the {instrument}"),
-        Option::None => println!("Singing with my voice"),
+        Option::None => println!("Organizing the band"),
     }
 }
