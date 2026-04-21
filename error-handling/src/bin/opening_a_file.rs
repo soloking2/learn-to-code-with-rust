@@ -2,13 +2,12 @@ use std::fs::File;
 use std::process;
 
 fn main() {
-    let file = match File::open("nonsense.txt") {
-        Ok(file) => file,
+    let file = match File::open("story.txt") {
+        Ok(f) => f,
         Err(error) => {
-            eprintln!("Something went wrong reading the file. The error was {error:?}");
-            process::exit(1)
+            eprintln!("Something went wrong, {error:?}");
+            process::exit(1);
         }
     };
-
-    println!("{file:?}");
+    println!("{file:#?}");
 }
