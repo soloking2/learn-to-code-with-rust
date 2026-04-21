@@ -5,6 +5,10 @@ fn main() {
     let full_name = first_name + &last_name;
     println!("{full_name}");
 
+    let mut fullname = String::from("Bright");
+    fullname.push(' ');
+    fullname.push_str(&last_name);
+
     // Invalid
-    // println!("{first_name}");
+    println!("{last_name}");
 }

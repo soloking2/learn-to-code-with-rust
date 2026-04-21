@@ -1,11 +1,12 @@
 use std::collections::HashMap;
 
 fn main() {
-    let mut coffee_pairings: HashMap<&str, &str> = HashMap::new();
-    let drink = String::from("Latte");
-    let milk = String::from("Oat Milk");
-    coffee_pairings.insert(&drink, &milk);
-    coffee_pairings.insert("Flat White", "Almond Milk");
-    println!("{}", coffee_pairings.len());
-    println!("{drink} {milk}");
+    let mut cofee_pairings: HashMap<&str, &str> = HashMap::new();
+    let milk = String::from("Milk");
+    let brand = String::from("Cowbell");
+    let milo = String::from("Milo");
+    cofee_pairings.insert(&milk, &brand);
+    cofee_pairings.insert("Chocolate", &milo);
+
+    println!("{:?}", cofee_pairings)
 }

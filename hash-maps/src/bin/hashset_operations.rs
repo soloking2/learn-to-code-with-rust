@@ -9,6 +9,8 @@ fn main() {
 
     movie_queue.insert("Boris");
     movie_queue.insert("Phil");
+    println!("{concert_queue:?}");
+    println!("{movie_queue:?}");
 
     println!("{:?}", concert_queue.union(&movie_queue));
     println!("{:?}", movie_queue.union(&concert_queue));
