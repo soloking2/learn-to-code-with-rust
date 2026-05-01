@@ -1,5 +1,5 @@
 fn longest<'a, 'b>(first: &'a str, second: &'b str) -> &'a str {
-    println!("The second is {second}");
+    println!("{second}");
     first
 }
 

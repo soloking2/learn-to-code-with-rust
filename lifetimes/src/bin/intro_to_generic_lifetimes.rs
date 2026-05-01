@@ -1,4 +1,4 @@
-fn select_first_two_elements(items: &[String]) -> &[String] {
+fn select_first_two_elements<'a>(items: &'a [String]) -> &'a [String] {
     &items[..2]
 }
 
