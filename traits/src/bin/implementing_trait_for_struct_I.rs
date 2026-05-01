@@ -1,33 +1,19 @@
-use std::collections::HashMap;
+use traits::{lodging, utils::{book_for_one_night, book_two_nights}};
+use lodging::{Accommodation, Hotel, Airbnb};
 
-trait Accommodation {
-    fn get_description(&self) -> String;
-    fn book(&mut self, name: &str, nights: u32);
+
+
+fn main() {
+    let mut hotel = Hotel::new("Citiheights");
+    hotel.book("Solomon", 4);
+    book_for_one_night(&mut hotel, "Emmanuel");
+    println!("{:?}", hotel);
+
+    println!("============================");
+    let mut airbnb = Airbnb::new("Peter");
+    airbnb.book("Solomon", 2);
+    book_two_nights(&mut airbnb, "Amanda");
+    println!("{}", airbnb.get_description());
+    println!("{}", airbnb.summarize());
+    println!("{:?}", airbnb);
 }
-
-#[derive(Debug)]
-struct Hotel {
-    name: String,
-    reservations: HashMap<String, u32>,
-}
-
-impl Hotel {
-    fn new(name: &str) -> Self {
-        Self {
-            name: name.to_string(),
-            reservations: HashMap::new(),
-        }
-    }
-}
-
-impl Accommodation for Hotel {
-    fn get_description(&self) -> String {
-        format!("{} is the pinnacle of luxury", self.name)
-    }
-
-    fn book(&mut self, name: &str, nights: u32) {
-        self.reservations.insert(name.to_string(), nights);
-    }
-}
-
-fn main() {}

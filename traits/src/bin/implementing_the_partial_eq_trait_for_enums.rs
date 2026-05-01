@@ -1,3 +1,4 @@
+
 enum Musician {
     SingerSongwriter(String),
     Band(u32),
@@ -13,12 +14,13 @@ impl PartialEq for Musician {
                 Band(_) => false,
             },
             Band(members) => match other {
-                SingerSongwriter(_) => false,
                 Band(other_members) => members == other_members,
+                SingerSongwriter(_) => false,
             },
-        }
     }
 }
+}
+
 
 fn main() {
     let rustin_bieber = SingerSongwriter("Rustin".to_string());

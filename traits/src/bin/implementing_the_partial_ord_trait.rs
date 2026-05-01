@@ -5,6 +5,17 @@ struct Job {
     commute_time: u32,
 }
 
+struct Work {
+    salary: u64,
+    commute_time: u32,
+}
+
+impl PartialEq for Work {
+    fn eq(&self, other: &Self) -> bool {
+        self.salary == other.salary
+    }
+}
+
 impl PartialEq for Job {
     fn eq(&self, other: &Self) -> bool {
         self.salary == other.salary
@@ -14,6 +25,12 @@ impl PartialEq for Job {
 impl Eq for Job {}
 
 impl PartialOrd for Job {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        self.salary.partial_cmp(&other.salary)
+    }
+}
+
+impl PartialOrd for Work {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
         self.salary.partial_cmp(&other.salary)
     }

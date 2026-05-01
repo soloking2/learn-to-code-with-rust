@@ -1,6 +1,3 @@
-use std::clone::Clone;
-
-#[derive(Clone, Debug)]
 struct Appointment {
     doctor: String,
     start_time: String,
@@ -16,25 +13,18 @@ impl Appointment {
         }
     }
 }
-
-// impl Clone for Appointment {
-//     fn clone(&self) -> Self {
-//         println!("Cloning Appointment");
-
-//         Self {
-//             doctor: self.doctor.clone(),
-//             start_time: self.start_time.clone(),
-//             end_time: self.end_time.clone(),
-//         }
-//     }
-// }
+impl Clone for Appointment {
+    fn clone(&self) -> Self {
+        Self {
+            doctor: self.doctor.clone(),
+            start_time: self.start_time.clone(),
+            end_time: self.end_time.clone(),
+        }
+    }
+}
 
 fn main() {
-    let morning_appt = Appointment::new("Dr. Andrews", "9:00AM", "10:00AM");
-    let replacement_appt = morning_appt.clone();
-    println!(
-        "{} is seeing the patient from {} to {}",
-        replacement_appt.doctor, replacement_appt.start_time, replacement_appt.end_time
-    );
-    println!("{morning_appt:?}");
+let morning_appointment = Appointment::new("Dr. Smith", "9:00 AM", "10:00 AM");
+let replacement_appointment = morning_appointment.clone();
+println!("{} is seeing the patienr from {} to {}", replacement_appointment.doctor, replacement_appointment.start_time, replacement_appointment.end_time);
 }
